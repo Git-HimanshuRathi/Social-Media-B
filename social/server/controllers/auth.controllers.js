@@ -50,7 +50,7 @@ export const signUp = async (req, res) => {
          maxAge: 30*24*60*60*1000 // 30 days
      })
 
-    res.status(201).json({message:'User Created Successfully'});
+    res.status(201).json(newUser);
   } catch (error) {
     res.status(500).json({ message: "Internal server error" });
   }
@@ -91,7 +91,7 @@ export const signIn = async (req, res) => {
      })
 
 
-    res.status(200).json({ message: "User Logged in" });
+    res.status(200).json(user);
   } catch (error) {
     res.status(500).json({ message: "Server Error" });
   }
